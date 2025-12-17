@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Food-Insight</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='css/style.css')}}"
+    />
+  </head>
+
+  <body>
+    <h1> </h1>
+    <nav class= 'navbar'>
+      <ol>
+        <li><a href="{{ url_for('main.index') }}">Thuis</a></li>
+        <li><a href="{{ url_for('events.registratie') }}">Aanmelden klant</a></li>
+        <li><a href="{{ url_for('events.inlog_klant') }}">Inloggen klant</a></li>
+        <li><a href="{{ url_for('events.aanmelden') }}">Aanmelden horeca</a></li>
+        <li><a href="{{ url_for('events.start') }}">Inloggen horeca</a></li>
+        <li><a href="{{ url_for('main.faq') }}">FAQ</a></li>
+
+      </ol>
+    </nav>
+    <main>
+      <header>{% block header %}{% endblock %}</header>
+      <div>{% block content %}{% endblock %}</div>
+    </main>
+    <footer><!-- hier komt nog een footer --></footer>
+  </body>
+</html>

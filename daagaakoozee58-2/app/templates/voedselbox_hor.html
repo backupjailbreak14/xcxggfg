@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block header %} 
+
+<div class="bekijkres-knop">
+    <a href="{{ url_for('events.reserveringen_hor') }}">
+        <button>📋 Bekijk reserveringen</button>
+    </a>
+</div>
+
+<h1 class="pagina-titel"> Voedselbox aanmaken! </h1> 
+{% endblock %}
+
+{% block content %} 
+
+<form class="huisstijl-form" method = "POST">
+    <div>
+        <label for="Vnaam"> 📦Boxnaam * </label>
+        <input type ='text' id="Vnaam" name="Vnaam" placeholder="Bijv. halal lunch/brunch box" required>
+    </div> 
+
+    <div>
+        <label for="beschrijving"> 📝Beschrijving * </label>
+        <textarea 
+           id="beschrijving"
+           name="beschrijving"
+           placeholder="1 portie friet, 3 kipnuggets, etc. " 
+           rows="4"
+           cols='50' 
+           required ></textarea>
+    </div> 
+
+    <div class="twee-velden">
+    
+     <div>
+        <label for="prijs">💰Prijs (€) *</label>
+        <input type="number" id="prijs" name="prijs" placeholder="0.0" required>
+     </div>
+
+    </div> 
+
+    <div class="labels">
+        <div>
+            <label for="hal_label"> halal </label>
+            <input type ="checkbox" id="hal_label" name="hal_label">
+        </div>
+
+        <div>
+            <label for="glu_label"> glutenvrij </label>
+            <input type ="checkbox" id="glu_label" name="glu_label">
+        </div>
+
+        <div>
+            <label for="vegan_label"> vegan </label>
+            <input type ="checkbox" id="vegan_label" name="vegan_label">
+        </div>
+
+        <div>
+            <label for="vegar_label"> vega </label>
+            <input type ="checkbox" id="vegar_label" name="vegar_label">
+        </div>
+    </div> 
+
+    <label for="tijd">🕒Selecteer een tijd: *</label>
+    <select id="tijd" name="tijd" required>
+      <option value="select">selecteer een tijdstip</option>
+      <option value="10-12">10:00 - 12:00</option>
+      <option value="12-14">12:00 - 14:00</option>
+      <option value="14-16">14:00 - 16:00</option>
+      <option value="16-18">16:00 - 18:00</option>
+      <option value="18-20">18:00 - 20:00</option>
+      <option value="20-22">20:00 - 22:00</option>
+    </select>
+
+    <div>
+       <label for="datum">📅Datum van publiceren * </label>
+       <input type ='date' id="datum" name="datum" placeholder="Bijv. 10/12/25" required>
+     </div> 
+ 
+    <input class="submit-btn" type = 'submit' value="🚀Publiceer">
+
+</form>
+
+{% endblock %}

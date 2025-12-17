@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="pagina-titel">Te Verwerken Reserveringen</h1>
+
+<div style="text-align:center; margin-bottom: 25px;">
+  <a href="{{ url_for('events.voedselbox_hor') }}">
+    <button>⬅ Terug naar box aanmaken</button>
+  </a>
+</div>
+{% endblock %}
+
+{% block content %}
+
+{% for r in reserveringen %}
+
+<div class="reservering-container horeca-reservering">
+
+  <div class="reservering-check">
+    <div class="check-circle">✓</div>
+  </div>
+
+  <h2>Nieuwe reservering</h2>
+  <p>Deze box is succesvol gereserveerd</p>
+
+  <div class="id-blok">
+    <p>Reserveringscode</p>
+    <h1>RES{{ r.ID }}</h1>
+  </div>
+
+  <div class="info-blok">
+    <div class="info-row">
+      <span class="label">Box</span>
+      <span class="value">{{ r.boxnaam }}</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Ophaaltijd</span>
+      <span class="value">{{ r.tijdstip }}</span>
+    </div>
+    <div class="info-row">
+      <span class="label">Prijs</span>
+      <span class="value">€ {{ r.prijs }}</span>
+    </div>
+  </div>
+
+  <div class="instructie-blok">
+    <h3>📍 Ophaalinstructies</h3>
+    <ul>
+      <li>Kom binnen de aangegeven ophaaltijd</li>
+      <li>Toon de reserveringscode</li>
+      <li>Neem een tas of bakje mee</li>
+      <li>Betaling ter plaatse</li>
+    </ul>
+  </div>
+
+  <a href="{{ url_for('events.afhandel_reservering', id=r.ID) }}">
+    <button class="btn-afgehandeld">Markeer als afgehandeld</button>
+  </a>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

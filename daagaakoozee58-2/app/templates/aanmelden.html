@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="pagina-titel">Aanmelden als horeca</h1>
+{% endblock %}
+
+{% block content %}
+
+<form class="huisstijl-form" method = "POST">
+    <div>
+        <label for = "Bnaam">🏢Bedrijfsnaam:</label>
+        <input type= "text" id = "Bnaam" name= "Bnaam" placeholder="Voer bedrijfsnaam in" required>
+    </div>  
+ 
+     <div>
+        <label for ="email">📩email:</label>
+        <input type="email" id = "email" name="email" placeholder="Voer uw email in " required>
+    </div>
+
+    <div>
+        <label for = "Pass">🔒wachtwoord:</label>
+        <input type="password" id = "Pass" name="Pass" placeholder="Voer uw wachtwoord in"  required>
+
+    </div>
+
+    <div>
+        <label for = "locatie">📍Locatie:</label>
+        <input type="text" id = "locatie" name="locatie" placeholder="Bijv. Café Aaltje, Weesp" required>
+    </div>
+
+    <button type="submit" class="submit-btn">🔒 Aanmelden</button>
+
+</form>
+{% endblock %}

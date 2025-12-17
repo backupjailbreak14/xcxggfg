@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block header %}<h1 class="pagina-titel">Beschikbare voedselboxen</h1> {% endblock %}
+
+{% block content %}
+
+<div class="dashboard">
+
+    {% for box in boxen %}
+    <div class="voedselbox">
+        
+        <div class="box-header">
+            <div class="box-title">
+                <h3>{{ box.boxnaam }}</h3>
+                <p class="box-subtitle">Diverse horecazaken</p>
+            </div>
+            <div class="box-price">
+                <span class="price">€ {{ box.prijs }}</span>
+                <span>{{ box.datum[:10] }}</span>
+            </div>
+        </div>
+
+        <p class="box-description">
+            {{ box.beschrijving }}
+        </p>
+
+        <div class="box-tags">
+            {% if box.halal %}<span class="tag">Halal</span>{% endif %}
+            {% if box.gluten %}<span class="tag">Glutenvrij</span>{% endif %}
+            {% if box.vegan %}<span class="tag">Vegan</span>{% endif %}
+            {% if box.vega %}<span class="tag tag-vega">Vegetarisch</span>{% endif %}
+        </div>
+        <div class="box-pickup">
+            <span class="pickup-icon">🕒</span>
+            <span class="pickup-text">Ophaaltijd: {{ box.tijdstip }}</span>
+        </div>
+
+        <a class="reserveer-btn" href="{{ url_for('events.reserveer', id=box.ID) }}">
+            Reserveer nu
+        </a>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1 class="pagina-titel">FoodInsight</h1>
+{% endblock %}
+
+{% block content %}
+<p class="alg-info">
+FoodInsight is een simpel en praktisch platform voor horecazaken om voedseloverschotten slim in te zetten.
+Ondernemers kunnen zelf boxen samenstellen met producten die anders zouden worden weggegooid.
+</p>
+
+<p class="alg-info">Het platform kost slechts €10 per maand en ondernemers behouden 100% van de winst, zonder commissies of verborgen kosten.
+Duidelijke labels zoals halal, vegan, vegetarisch en glutenvrij helpen klanten snel passende boxen te vinden.
+</p>
+
+<p class="alg-info">FoodInsight is ontwikkeld door <b>Yassine</b> en <b>Ismail</b>, twee HBO-ICT studenten die voedselverspilling willen verminderen.
+</p>
+
+<div class="features">
+    <div class="feature-box">
+        <div class="icoon oranje">🎯</div>
+        <h3>Simpel Invoeren</h3>
+        <p>Ondernemers kunnen eenvoudig eigen voedselboxen maken van de producten die ze overhouden.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icoon blauw">🔍</div>
+        <h3>Volledige Informatie</h3>
+        <p>Je ziet altijd precies de inhoud, de prijs en de ophaaltijd van elke box.</p>
+    </div>
+
+    <div class="feature-box">
+        <div class="icoon groen">♻️</div>
+        <h3>Goed voor jou en de planeet</h3>
+        <p>Koop voordelige boxen en help mee voedselverspilling tegen te gaan.</p>
+    </div>
+  </div>  
+
+<div class="login-buttons">
+    <div class="inlog-box">
+        <a href="{{ url_for('events.start') }}"> Inloggen <br> Horeca </a>
+    </div>
+
+    <div class="inlog-boxcon">
+        <a href="{{ url_for('events.inlog_klant') }}"> Inloggen <br> klant </a>
+    </div>
+</div>
+
+<div class="contact">
+    <h2>Contact</h2>
+
+    <div class="contact-container">
+        <div class="contact-box">
+            <div class="icoon">📞</div>
+            <div class="contact-info">
+                <h4>Telefoon</h4>
+                <p>06-12345678</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <div class="icoon">✉️</div>
+            <div class="contact-info">
+                <h4>Email</h4>
+                <p>info@FoodInsight.nl</p>
+            </div>
+        </div>
+    </div>
+
+    <p class="contact-tekst">Vragen over de app? Neem gerust contact met ons op!</p>
+</div>
+{% endblock %}

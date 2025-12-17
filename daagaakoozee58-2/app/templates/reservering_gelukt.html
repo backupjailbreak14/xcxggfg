@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="reservering-container">
+
+        <div class="reservering-check">
+            <div class="check-circle">✓</div>
+        </div>
+
+        <h2>Reservering geslaagd!</h2>
+        <p>Je box is succesvol gereserveerd</p>
+
+        <div class="id-blok">
+            <p>Reserveringscode</p>
+            <h1>RES{{ box.ID }}</h1>
+        </div>
+
+        <div class="info-blok">
+            <div class="info-row">
+                <span class="label">Box:</span>
+                <span class="value">{{ box.boxnaam }}</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Horecazaak:</span>
+                <span class="value">Diverse horecazaken</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Prijs:</span>
+                <span class="value">€ {{ box.prijs }}</span>
+            </div>
+        </div>
+
+        <div class="instructie-blok">
+            <h3>📍 Ophaalinstructies</h3>
+            <ul>
+                <li>Maak een screenshot van de reserveringscode</li>
+                <li>Kom binnen de aangegeven ophaaltijd</li>
+                <li>Toon je reserveringscode bij de balie</li>
+                <li>Betaling ter plaatse (contant of pin)</li>
+            </ul>
+        </div>
+
+        <a href="{{ url_for('events.voedselbox_klant') }}">
+            <button>Terug naar voedselboxen</button>
+        </a>
+
+    </div>
+{% endblock %}
+
